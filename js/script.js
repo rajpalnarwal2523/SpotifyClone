@@ -80,6 +80,8 @@ async function DisplayAlbums() {
             //Get the metadata for the folder
             let a = await fetch(`songs/${folder}/info.json`);
             let response = await a.json();
+            console.log("test")
+            console.log(response);
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card">
                         <div class="play">
                             <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" width="28"
@@ -89,7 +91,7 @@ async function DisplayAlbums() {
                                 </path>
                             </svg>
                         </div>
-                        <img src="/songs/${folder}/cover.jpeg" alt="">
+                        <img src="songs/${folder}/cover.jpeg" alt="">
                         <h2>${response.title}</h2>
                         <p>${response.description}</p>
                     </div>`
